@@ -1,5 +1,7 @@
 # hengine
 
+[한국어 README](./README_kr.md)
+
 Zero-dependency TypeScript + HTML5 Canvas 2D game engine. Browser standard APIs only — no React, no Phaser, no PixiJS, no bundler required.
 
 Distilled from a collection of small TypeScript canvas games, hengine packages the patterns that kept showing up: a DPR-aware canvas/RAF loop, scene lifecycle, pointer + keyboard input, procedural Web Audio, IndexedDB persistence with memory fallback, and a couple of canvas-rendered UI primitives.
