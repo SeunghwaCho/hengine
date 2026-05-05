@@ -17,19 +17,23 @@ Constraints kept on purpose:
 
 ## Install
 
+Not on npm yet. Clone and build locally:
+
 ```bash
-npm install hengine        # once published
-# or, locally:
-git clone https://github.com/<your-user>/hengine.git
+git clone https://github.com/SeunghwaCho/hengine.git
 cd hengine
 npm install
 npm run build
 ```
 
+Then either:
+- import directly from a sibling path (`import { App } from "../hengine/dist/index.js"`),
+- or `npm install /path/to/hengine` to add it as a local-file dependency.
+
 ## Quick start
 
 ```ts
-import { App, Scene, drawText, fillRect } from "hengine";
+import { App, Scene, drawText, fillRect } from "hengine"; // or "./path/to/hengine/dist/index.js"
 
 class Hello implements Scene {
   draw(ctx, layout) {
