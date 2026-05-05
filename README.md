@@ -17,6 +17,40 @@ Constraints kept on purpose:
 - TypeScript-first. `strict` mode, strong types on every public API.
 - `localStorage` is intentionally avoided in favor of IndexedDB (with auto-fallback).
 
+## Compared to other engines
+
+Honest take: **hengine is not "easier to ship a game with" than Phaser or Godot.** Those have richer tooling and will produce a complex game faster. hengine wins on a different axis.
+
+### Real advantages
+
+| Aspect | hengine | Phaser / PixiJS |
+| --- | --- | --- |
+| Total source | ~1,700 lines, readable in 30 min | Tens of thousands of lines, opaque |
+| Runtime deps | 0 | Dozens transitively |
+| Bundle size | ~30 KB | Phaser 1 MB+, Pixi several hundred KB |
+| Build tooling | `tsc` only | Vite / Webpack configs typically expected |
+| DPR / resize / IndexedDB | built-in | bring your own |
+| TypeScript types | source *is* the types | separate `@types/*` package |
+
+### Real disadvantages
+
+- **Lower performance ceiling** — Canvas 2D, no batching, no WebGL. ~1,000 moving sprites is the practical limit. Phaser/Pixi handle 10,000+.
+- **No physics engine** — no Box2D / Matter integration. Pong-level collisions only (axis-aligned + circles + a spatial grid).
+- **No tilemap, no particle system, no scene transitions, no sound mixer.** Each game writes its own when needed.
+- **Zero ecosystem.** No plugins, no Tiled importer, no Spine integration, no Stack Overflow tag.
+- **No 3D, no networking, no mobile gesture library.**
+
+### What it's a fit for
+
+| Good fit | Poor fit |
+| -------- | -------- |
+| Puzzles, board games, cards, casual arcade | Action / shooters / RPGs |
+| Learning game-dev fundamentals from readable code | Heavy effects / particles / physics |
+| Web-only releases with quick iteration | Mobile-app-store releases |
+| Single-developer projects with custom feel | Team projects needing shared tooling |
+
+The one-line claim hengine can stand behind: **you can hold the entire engine in your head.** That's never going to be true of Phaser. Whether that matters depends on what you're building.
+
 ## Install
 
 Not on npm yet. Clone and build locally:
