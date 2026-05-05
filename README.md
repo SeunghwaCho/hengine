@@ -54,6 +54,8 @@ app.start();
 
 A complete Breakout example with persistent high score, modal dialogs, procedural audio, and keyboard controls lives in [`examples/breakout`](./examples/breakout).
 
+For a step-by-step tutorial in Korean, see [`followme.md`](./followme.md) — it walks through building a simple "Star Catcher" arcade game from scratch using every major engine module.
+
 ## What's in the box
 
 ```

@@ -54,6 +54,8 @@ app.start();
 
 영속 하이스코어, 모달 다이얼로그, 절차적 사운드, 키보드 컨트롤까지 갖춘 완전한 Breakout 예제는 [`examples/breakout`](./examples/breakout)에 있습니다.
 
+처음 써보는 분이라면 [`followme.md`](./followme.md) 단계별 튜토리얼을 보세요. "별잡기" 게임을 0부터 만들면서 엔진의 주요 모듈을 한 번씩 다 다룹니다.
+
 ## 모듈 구성
 
 ```
